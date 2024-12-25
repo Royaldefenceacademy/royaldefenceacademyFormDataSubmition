@@ -29,7 +29,7 @@ app.post('/send-data', async (req, res) => {
             })
         } else {
             console.error('Error:', response.statusText);
-            res.status(response.status).send('Failed to send data');
+            res.status(400).send('Failed to send data',response.error);
         }
     } catch (e) {
         console.error('Error:', e);
